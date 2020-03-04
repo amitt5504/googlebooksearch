@@ -2,7 +2,14 @@ import axios from "axios";
 
 export default {
   getBook: function (query) {
-    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
+    if(!query)
+    {
+      return axios.get(`https://www.googleapis.com/books/v1/volumes?q=spider-man`);
+    }
+    else
+    {
+      return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
+    }
   },
   // Saves a book to the database
   saveBook: function (bookData) {
