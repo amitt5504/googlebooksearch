@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import "./style.css";
 
 class Results extends Component {
 
@@ -19,9 +20,7 @@ class Results extends Component {
             API.deleteBook(book._id)
                 .then(deletedBook => this.setState({ savedBooks: this.state.savedBooks.filter(book => book._id !== deletedBook._id) }))
                 .catch(err => console.error(err)); 
-            API.savedBooks()
-                .then(savedBooks => this.setState({ savedBooks: savedBooks }))
-                .catch(err => console.error(err));
+            
         } else {
             API.saveBook(book)
                 .then(savedBook => this.setState({ savedBooks: this.state.savedBooks.concat([savedBook]) }))
@@ -48,7 +47,7 @@ class Results extends Component {
                                                 <p className="card-text">{result.description}</p>
                                                 <div>
                                                     <a href={result.link} className="btn badge-pill btn-outline-dark mt-3" target="_blank" rel="noopener noreferrer">View</a>
-                                                    <button onClick={() => this.handleSave(result)} className="btn badge-pill btn-outline-warning mt-3 ml-3" >
+                                                    <button onClick={() => this.handleSave(result)} className="btn badge-pill btn-outline mt-3 ml-3" id="test">
                                                         {this.state.savedBooks.map(book => book._id).includes(result._id) ? "Unsave" : "Save"}
                                                     </button>
                                                 </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles.css"
 
 
 function Form(props){
@@ -6,7 +7,7 @@ return (
   <div className="container">
   <form>
     <div className="form-group">
-      <label htmlFor="search"><h2>Search for and save Books of Interest</h2></label>
+      <label htmlFor="search"><h2>Search now and build your library</h2></label>
       <input
         onChange={props.handleInputChange}
         value={props.search}
@@ -16,7 +17,7 @@ return (
         placeholder="Search a Book"
         id="search"
       />
-      <button onClick={props.handleFormSubmit} className="btn btn-dark mt-3 mb-5">
+      <button onClick={props.handleFormSubmit} className="btn badge-pill mt-3 mb-5" id="searchBtn">
         Search
         </button>
     </div>

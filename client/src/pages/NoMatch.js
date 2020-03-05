@@ -1,23 +1,21 @@
 import React from "react";
-import { Col, Row, Container } from "../components/Grid";
-import Header from "../components/Header";
+
 
 function NoMatch() {
+
+  let styles = {
+    textAlign: 'center'
+  };
+
   return (
-    <Container fluid>
-      <Row>
-        <Col size="md-12">
-          <Header>
-            <h1>404 Page Not Found</h1>
-            <h1>
-              <span role="img" aria-label="Face With Rolling Eyes Emoji">
-                🙄
-              </span>
-            </h1>
-          </Header>
-        </Col>
-      </Row>
-    </Container>
+    <div>
+      <h1 style={styles}>404 Page Not Found</h1>
+      <h1 style={styles}>
+        <span role="img" aria-label="Face With Rolling Eyes Emoji">
+            🙄
+        </span>
+      </h1>
+    </div>
   );
 }
 
